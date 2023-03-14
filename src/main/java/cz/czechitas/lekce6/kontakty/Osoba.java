@@ -1,5 +1,7 @@
 package cz.czechitas.lekce6.kontakty;
 
+import cz.czechitas.lekce6.nakupniseznam.Polozka;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -71,12 +73,14 @@ public class Osoba {
     }
 
     //region Metody k implementaci.
+
     /**
      * Přidá uvedený e-mail do seznamu e-mailů.
+     *
      * @param email
      */
     private void pridejEmail(String email) {
-        //TODO
+        emaily.add(email);
     }
 
     /**
@@ -86,31 +90,34 @@ public class Osoba {
      * @return
      */
     private boolean obsahujeEmail(String email) {
-        //TODO
-        return false;
+        return emaily.contains(email);
     }
 
     /**
      * Přidá telefon na seznam telefonů.
+     *
      * @param telefon
      */
     private void pridejTelefon(String telefon) {
-        //TODO
+        telefony.add(telefon);
     }
 
     /**
      * Odstraní telefon ze seznamu telefonů.
+     *
      * @param telefon
      */
     private void odstranTelefon(String telefon) {
-        //TODO
+        telefony.remove(telefon);
     }
 
     /**
      * Zjistí, zda je seznam telefonů prázdný.
      */
     private boolean jeSeznamTelefonuPrazdny() {
-        //TODO
+        if (telefony.isEmpty()) {
+            System.out.println("Seznam telefonů je prázdný");
+        }
         return false;
     }
 
@@ -118,43 +125,45 @@ public class Osoba {
      * Smaže všechny telefony ze seznamu.
      */
     private void smazVsechnyTelefony() {
-        //TODO
+        telefony.clear();
     }
 
     /**
      * Přidá do seznamu další dítě.
+     *
      * @param jmeno Křestní jméno dítěte.
      */
     private void pridejDite(String jmeno) {
-        //TODO
+        //deti.add(new Osoba("Judita", "Malá"));
     }
 
     /**
      * Vrací údaj, zda dané dítě je uvedené v seznamu dětí.
+     *
      * @param jmeno Křestní jméno hledaného dítěte.
      * @return
      */
     private boolean jeNaSeznamuDite(String jmeno) {
-        //TODO
+        deti.contains("Judita");
         return false;
     }
 
     /**
      * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
-     *
+     * <p>
      * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací {@code null}.
      *
      * @param jmeno Křestní jméno hledaného dítěte.
      * @return Pořadí dítěte.
      */
     private Integer kolikateJe(String jmeno) {
-        //TODO
+        //todo
         return 0;
     }
 
     /**
      * Vypíše jména všech dětí na standardní výstup.
-     *
+     * <p>
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
      */
     private void vypisDeti() {
